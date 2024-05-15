@@ -1,8 +1,42 @@
-# React + Vite
+# Movie Maniac
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Movie Maniac is a React application that utilizes the TMDB movie APIs to display lists of popular, top-rated, and upcoming movies. The app also features a dark mode toggle for improved user experience in low-light environments.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- View lists of popular, top-rated, and upcoming movies.
+- Dark mode toggle for comfortable viewing in low-light conditions.
+- Styling using Tailwind CSS for a sleek and modern UI.
+
+## Getting Started
+
+Clone the project
+
+```bash
+  git clone https://github.com/shann592/movie-maniac
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Register on TMDB for API key and set up .env file as below
+
+```bash
+  VITE_REACT_TMDB_API_KEY
+  VITE_REACT_TMDB_URL=https://api.themoviedb.org/3/movie/
+  VITE_REACT_TMDB_IMG_URL=https://image.tmdb.org/t/p/w500
+```
+
+Install dependencies
+
+```bash
+  npm i
+```
+
+Run dev server locally
+
+```bash
+  npm run dev

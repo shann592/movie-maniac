@@ -19,7 +19,7 @@ export default function MovieCard({ movie }) {
         <div className="flex items-center justify-between text-xs text-yellow-300 my-[1px]">
           <p>{movie.release_date}</p>
           <p className="flex items-baseline">
-            {movie.rate_average}
+            {movie.vote_average.toFixed(1)}
             <img className="w-5 h-5 ml-1 mr-1" src={star} alt="rating icon" />
           </p>
         </div>
