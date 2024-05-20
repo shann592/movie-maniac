@@ -23,12 +23,13 @@ export default function MovieList({ type, emoji, title }) {
       },
     })
     const data = await res.json()
+
     setMovies(data.results)
     setFilterMovies(data.results)
   }
   useEffect(() => {
     fetchMovies()
-  }, [])
+  }, [type])
 
   useEffect(() => {
     if (sort.by !== 'default') {
