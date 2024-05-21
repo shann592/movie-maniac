@@ -1,8 +1,8 @@
 import { useRef } from 'react'
-import MovieList from './components/MovieList'
-import Navbar from './components/Navbar'
 
-import { Outlet } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import RoutesWithAnimation from './components/RoutesWithAnimation'
+import LocationProvider from './components/LocationProvider'
 
 export default function App() {
   const wrapperRef = useRef()
@@ -14,10 +14,9 @@ export default function App() {
     >
       <Navbar wrapper={wrapperRef} />
       <main className="w-screen">
-        <Outlet />
-        {/* <MovieList type="popular" title="Popular" emoji={fire} />
-        <MovieList type="top_rated" title="Top Rated" emoji={star} />
-        <MovieList type="upcoming" title="Upcoming" emoji={party} /> */}
+        <LocationProvider>
+          <RoutesWithAnimation />
+        </LocationProvider>
       </main>
     </div>
   )

@@ -1,12 +1,13 @@
 # Movie Maniac
 
-Movie Maniac is a React application that utilizes the TMDB movie APIs to display lists of popular, top-rated, and upcoming movies. The app also features a dark mode toggle for improved user experience in low-light environments.
+Movie Maniac is a React application that utilizes the TMDB movie APIs to display lists of popular, top-rated, and upcoming movies. The app also features a dark mode toggle for improved user experience in low-light environments. Also the routes have animated tranisition for smooth navigation built with framer-motion.
 
 ## Features
 
 - View lists of popular, top-rated, and upcoming movies.
 - Dark mode toggle for comfortable viewing in low-light conditions.
 - Styling using Tailwind CSS for a sleek and modern UI.
+- Routes animation with framer-motion.
 
 ## Getting Started
 

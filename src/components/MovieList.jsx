@@ -1,11 +1,39 @@
 import { useEffect, useState } from 'react'
 import _ from 'lodash'
+import { motion } from 'framer-motion'
 
 import config from '../config'
 import MovieCard from './MovieCard'
 import FilterGroup from './FilterGroup'
 
 export default function MovieList({ type, emoji, title }) {
+  const routeVariants = {
+    initial: {
+      y: '100vh',
+    },
+    final: {
+      y: '0vh',
+      transition: {
+        type: 'spring',
+        mass: 0.4,
+      },
+    },
+  }
+
+  const childVariants = {
+    initial: {
+      opacity: 0,
+      y: '50px',
+    },
+    final: {
+      opacity: 1,
+      y: '0px',
+      transition: {
+        duration: 0.5,
+        delay: 0.5,
+      },
+    },
+  }
   const [movies, setMovies] = useState([])
   const [filterMovies, setFilterMovies] = useState([])
   const [minRating, setMinRating] = useState(0)
@@ -60,8 +88,19 @@ export default function MovieList({ type, emoji, title }) {
   }
 
   return (
-    <section className="w-full" id={type}>
-      <header className="flex justify-between items-center py-[10px] px-[30px]">
+    <motion.section
+      variants={routeVariants}
+      initial="initial"
+      animate="final"
+      className="w-full"
+      id={type}
+    >
+      <motion.header
+        variants={childVariants}
+        initial="initial"
+        animate="final"
+        className="flex justify-between items-center py-[10px] px-[30px]"
+      >
         <h2 className="flex text-2xl font-bold items-center text-yellow-400">
           {title}
           <img
@@ -96,12 +135,17 @@ export default function MovieList({ type, emoji, title }) {
             <option value="desc">Descending</option>
           </select>
         </div>
-      </header>
-      <div className="flex flex-wrap justify-evenly items-center">
+      </motion.header>
+      <motion.div
+        variants={childVariants}
+        initial="initial"
+        animate="final"
+        className="flex flex-wrap justify-evenly items-center"
+      >
         {filterMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }
